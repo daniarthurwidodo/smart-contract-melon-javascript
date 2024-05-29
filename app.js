@@ -43,7 +43,7 @@ app.post('/create-asset', (req, res) => {
 	}
 });
 
-app.get('/get-all-asset', async (req, res) => {
+app.get('/get-all-asset', jsonParser, async (req, res) => {
 
 	try {
 		const gateway = new Gateway();
