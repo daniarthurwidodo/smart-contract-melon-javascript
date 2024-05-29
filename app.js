@@ -44,6 +44,7 @@ app.post('/create-asset', (req, res) => {
 });
 
 app.get('/get-all-asset', async (req, res) => {
+
 	try {
 		const gateway = new Gateway();
 		const wallet = await buildWallet(Wallets, walletPath);
@@ -59,7 +60,7 @@ app.get('/get-all-asset', async (req, res) => {
 		const network = await gateway.getNetwork(channelName);
 
 		// Get the contract from the network.
-		const contract = network.getContract(chaincodeName);
+		const contract = network.getContract(req.body.chaincodeName);
 		console.log('\n--> Evaluate Transaction: GetAllAssets, function returns all the current assets on the ledger');
 		let result = await contract.evaluateTransaction('GetAllAssets');
 		console.log(`*** Result: ${prettyJSONString(result.toString())}`);
