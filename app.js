@@ -143,8 +143,8 @@ async function initAdmin(){
 		const wallet = await buildWallet(Wallets, walletPath);
 
 		await enrollAdmin(caClient, wallet, mspOrg1);
-		// await registerAndEnrollUser(caClient, wallet, mspOrg1, org1UserId, 'org1.department1');
-		const gateway = new Gateway();
+		await registerAndEnrollUser(caClient, wallet, mspOrg1, org1UserId, 'org1.department1');
+		// const gateway = new Gateway();
 
 	} catch (error) {
 		console.log(error);
