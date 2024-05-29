@@ -31,18 +31,6 @@ app.get('/', (req, res) => {
 	res.send('Hello World!');
 });
 
-app.post('/create-asset', (req, res) => {
-	try {
-		res.status(200).send({
-
-		});
-	} catch (error) {
-		res.status(500).send({
-			error: error
-		});
-	}
-});
-
 app.get('/get-all-asset', jsonParser, async (req, res) => {
 
 	try {
@@ -75,7 +63,7 @@ app.get('/get-all-asset', jsonParser, async (req, res) => {
 	}
 });
 
-app.post('/create', jsonParser, async (req, res) => {
+app.post('/create/:chaincodeName', jsonParser, async (req, res) => {
 	console.log(req.body);
 	try {
 		const gateway = new Gateway();
@@ -90,7 +78,7 @@ app.post('/create', jsonParser, async (req, res) => {
 
 		// Build a network instance based on the channel where the smart contract is deployed
 		const network = await gateway.getNetwork(channelName);
-		const contract = network.getContract(chaincodeName);
+		const contract = network.getContract(req.params.chaincodeName);
 
 		// Now let's try to submit a transaction.
 		// This will be sent to both peers and if both peers endorse the transaction, the endorsed proposal will be sent
