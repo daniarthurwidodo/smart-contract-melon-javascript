@@ -20,7 +20,7 @@ const chaincodeName = 'mychaincode';
 
 const mspOrg1 = 'Org1MSP';
 const walletPath = path.join(__dirname, 'wallet');
-const org1UserId = 'exploreradmin';
+const org1UserId = 'adminMelon';
 
 function prettyJSONString(inputString) {
 	return JSON.stringify(JSON.parse(inputString), null, 2);
