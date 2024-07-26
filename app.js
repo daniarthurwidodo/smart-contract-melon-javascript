@@ -18,9 +18,9 @@ const port = 8085;
 const channelName = 'mychannel';
 const chaincodeName = 'mychaincode';
 
-const mspOrg1 = 'Org1MSP';
-const walletPath = path.join(__dirname, 'wallet');
-const org1UserId = 'adminMelon';
+let mspOrg1 = 'Org1MSP';
+let walletPath = path.join(__dirname, 'wallet');
+let org1UserId = 'adminMelon';
 
 function prettyJSONString(inputString) {
 	return JSON.stringify(JSON.parse(inputString), null, 2);
