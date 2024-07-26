@@ -38,6 +38,7 @@ exports.buildCCPOrg2 = () => {
 
 exports.buildWallet = async (Wallets, walletPath) => {
 	// Create a new  wallet : Note that wallet is for managing identities.
+	console.log(walletPath);
 	let wallet;
 	if (walletPath) {
 		wallet = await Wallets.newFileSystemWallet(walletPath);
