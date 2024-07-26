@@ -127,9 +127,9 @@ app.post('/create/:chaincodeName', jsonParser, async (req, res) => {
 
 async function initAdmin(){
 	try {
-		const ccp = buildCCPOrg1();
-		const caClient = buildCAClient(FabricCAServices, ccp, 'ca.org1.example.com');
-		const wallet = await buildWallet(Wallets, walletPath);
+		let ccp = buildCCPOrg1();
+		let caClient = buildCAClient(FabricCAServices, ccp, 'ca.org1.example.com');
+		let wallet = await buildWallet(Wallets, walletPath);
 
 		await enrollAdmin(caClient, wallet, mspOrg1);
 		await registerAndEnrollUser(caClient, wallet, mspOrg1, org1UserId, 'org1.department1');
