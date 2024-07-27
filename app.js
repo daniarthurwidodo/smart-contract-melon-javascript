@@ -28,7 +28,7 @@ function prettyJSONString(inputString) {
 
 
 app.get('/', (req, res) => {
-	res.send('Hello World!');
+	res.send('Ready to insert blockchain!');
 });
 
 app.get('/get-all-asset', jsonParser, async (req, res) => {
