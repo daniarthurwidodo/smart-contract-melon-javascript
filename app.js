@@ -121,6 +121,7 @@ app.post('/create/:chaincodeName', jsonParser, async (req, res) => {
 	} catch (error) {
 		res.status(500).send({
 			error: error.toString(),
+			result: result.toString(),
 			body: req.body
 		});
 	}
