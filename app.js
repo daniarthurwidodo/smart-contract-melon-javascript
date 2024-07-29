@@ -90,6 +90,7 @@ app.post('/create/:chaincodeName', jsonParser, async (req, res) => {
 			[req.body.pengirim],
 			[req.body.penerima],
 			[req.body.melon],
+			[req.body.noRak],
 			[req.body.tanggalTanam],
 			[req.body.tanggalPanen],
 			[req.body.kuantitas],
